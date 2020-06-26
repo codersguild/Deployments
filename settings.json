@@ -149,7 +149,15 @@
             "command" : {
                 "action": "newTab",
                 "tabTitle" : "Org-Repos",
-                "startingDirectory": "C:\\Users\\lahir\\Documents\\GitHub\\Org-Repos"
+                "startingDirectory": "C:\\Users\\lahir\\Documents\\GitHub"
+            },
+            "keys" : "alt+g"
+        },
+        {
+            "command" : {
+                "action": "newTab",
+                "tabTitle" : "Org-Repos",
+                "startingDirectory": "C:\\Users\\lahir\\Documents"
             },
             "keys" : "alt+t"
         },

@@ -1,6 +1,4 @@
-# Dockerfiles
-Kubernetes Pods and Docker Setup files (Dockerfiles)
-
+## Some Installs
 
 ## Init : 
 

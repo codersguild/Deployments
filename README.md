@@ -9,7 +9,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install -y cmake cmake-data unzip \
   	  curl wget cmake git nano make build-essential \
-      ca-certificates z3 dafny python python3 python3-pip \ 
+      ca-certificates z3 dafny python3 python3-pip \ 
       llvm z3 gcc g++ golang-go gccgo \
       ninja-build libgraphviz-dev \
       libgmp-dev libmpfr-dev clang \

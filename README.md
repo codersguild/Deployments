@@ -35,6 +35,17 @@ sudo apt-get install -y cmake cmake-data unzip
       graphviz libgraphviz-dev python3-pygraphviz
       lcov ggcov apt-utils net-tools inotify-tools 
 ```
+
+## Basic Setup 
+
+```bash
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+```
 ## Docker Image 
 
 You can pull a gollvm docker image for here [Docker Image](https://hub.docker.com/r/prodrelworks/gollvm-docker)

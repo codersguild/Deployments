@@ -51,5 +51,18 @@ sudo snap install docker
 sudo snap install microk8s --channel=1.19/candidate --classic
 ```
 
+```bash
+CC=gcc CXX=g++                                  \
+cmake -DCMAKE_INSTALL_PREFIX=/usr               \
+      -DLLVM_ENABLE_FFI=ON                      \
+      -DCMAKE_BUILD_TYPE=Release                \
+      -DLLVM_BUILD_LLVM_DYLIB=ON                \
+      -DLLVM_LINK_LLVM_DYLIB=ON                 \
+      -DLLVM_ENABLE_RTTI=ON                     \
+      -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF" \
+      -DLLVM_BUILD_TESTS=ON                     \
+      -Wno-dev -G Ninja ../llvm                &&
+ninja all
+```
 
 https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569

@@ -66,7 +66,7 @@ ninja all
 ```
 
 ```bash
-CC=clang CXX=clang++                                  \
+CC=clang CXX=clang++                            \
 cmake -DCMAKE_INSTALL_PREFIX=/usr               \
       -DLLVM_ENABLE_FFI=ON                      \
       -DCMAKE_BUILD_TYPE=Release                \

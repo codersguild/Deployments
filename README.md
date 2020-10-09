@@ -89,19 +89,5 @@ cmake \
 ```
 
 ```bash
-cmake \
-  -DENABLE_POSIX_RUNTIME=ON \
-  -DENABLE_KLEE_UCLIBC=ON \
-  -DKLEE_UCLIBC_PATH=../klee-uclibc \
-  -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config \
-  -DLLVMCC=/usr/bin/clang-9 \
-  -DLLVMCXX=/usr/bin/clang++-9 \
-  -DENABLE_KLEE_LIBCXX=ON \
-  -DENABLE_UNIT_TESTS=ON \
-  -DENABLE_SYSTEM_TESTS=ON \
-  -DGTEST_SRC_DIR=/home/vmconsys655/googletest-release-1.7.0 \
-  -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts \
-  -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9 \ 
-  -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1/ \
-  ../klee
+cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-uclibc   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DENABLE_UNIT_TESTS=ON   -DENABLE_SYSTEM_TESTS=ON   -DGTEST_SRC_DIR=/home/vmconsys655/googletest-release-1.7.0/   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9   -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1/ ../klee
 ```

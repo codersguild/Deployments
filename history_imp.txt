@@ -1,0 +1,32 @@
+ 1505  cmake -DCMAKE_C_COMPILER=clang         -DCMAKE_CXX_COMPILER=clang++         -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi"         ../llvm
+ 1506  make 
+ 1507  make -j 12
+ 1508  LLVM_VERSION=9 SANITIZER_BUILD= BASE=../llvm-project/libcxx REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
+ 1509  clang++-9
+ 1510  LLVM_VERSION=9 SANITIZER_BUILD= BASE=/home/vmconsys655/llvm-project/libcxx/ REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
+ 1511  /home/vmconsys655/llvm-project/libcxx/
+ 1512  /home/vmconsys655/llvm-project/libcxx
+ 1513  cd /home/vmconsys655/llvm-project/libcxx
+ 1514  ls
+ 1515  rm -rf *
+ 1516  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-ulibc   -DENABLE_UNIT_TESTS=ON   -DGTEST_SRC_DIR=<GTEST_SOURCE_DIR>   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/ \ 
+ 1517  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-ulibc   -DENABLE_UNIT_TESTS=ON   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/ \ 
+ 1518  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-ulibc   -DENABLE_UNIT_TESTS=ON   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/ \ 
+ 1519  cleasr
+ 1520  clear
+ 1521  cmake -DENABLE_POSIX_RUNTIME=ON -DENABLE_KLEE_UCLIBC=ON -DKLEE_UCLIBC_PATH=../klee-ulibc -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config -DLLVMCC=/usr/bin/clang-9 -DLLVMCXX=/usr/bin/clang++-9 -DENABLE_KLEE_LIBCXX=ON -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/ -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1/ ../klee
+ 1522  cmake -DENABLE_POSIX_RUNTIME=ON -DENABLE_KLEE_UCLIBC=ON -DKLEE_UCLIBC_PATH=../klee-ulibc -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config -DLLVMCC=/usr/bin/clang-9 -DLLVMCXX=/usr/bin/clang++-9 -DENABLE_KLEE_LIBCXX=ON -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/ -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1/ -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts ../klee
+ 1523  rm -rf *
+ 1524  clear
+ 1525  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-ulibc   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9 \ 
+ 1526  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-ulibc   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9   -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1/ ../klee
+ 1527  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-uclibc   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9   -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1/ ../klee
+ 1528  make -j 6
+ 1529  sudo make install 
+ 1530  ./run.sh 
+ 1531  ./sample.sh 
+ 1532  ./run.sh 
+ 1533  clear
+ 1534  cd ../klee-build/
+ 1535  clear
+ 1536  make -j 12 && sudo make install 

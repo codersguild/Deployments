@@ -91,3 +91,7 @@ cmake \
 ```bash
  cmake   -DENABLE_POSIX_RUNTIME=ON   -DENABLE_KLEE_UCLIBC=ON   -DKLEE_UCLIBC_PATH=../klee-uclibc   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config   -DLLVMCC=/usr/bin/clang-9   -DLLVMCXX=/usr/bin/clang++-9   -DENABLE_KLEE_LIBCXX=ON   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts   -DKLEE_LIBCXX_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9 \ -DKLEE_LIBCXX_INCLUDE_DIR=/home/vmconsys655/llvm-project/libcxx/libc++-install-9/include/c++/v1 -DKLEE_LIBCXXABI_SRC_DIR=/home/vmconsys655/llvm-project/libcxxabi/src/ ../klee 
 ```
+
+## Errors
+
+```-lstdc++```, ```sudo apt-get install libstdc++-10-dev```.

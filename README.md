@@ -60,4 +60,5 @@ ninja all
 ## `LookUps`
 
 ```-lstdc++```, ```sudo apt-get install libstdc++-10-dev```.
+
 ```ping```, ```ping $(ifconfig | grep "inet 19" |  awk '{print $2}')```

@@ -79,8 +79,16 @@ ninja all
 ## Termification 
 
 ```
-sudo apt install golang-go
+sudo apt install golang-go unzip
 go get -u github.com/justjanne/powerline-go
+
+wget https://github.com/microsoft/cascadia-code/releases/download/v2009.22/CascadiaCode-2009.22.zip
+unzip CascadiaCode-2009.22.zi
+
+sudo cp -r ttf/ /usr/share/fonts/
+sudo cp -r woff2/ /usr/share/fonts/
+
+sudo nano ~/.bashrc 
 
 GOPATH=$HOME/go
 function _update_ps1() {

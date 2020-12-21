@@ -21,6 +21,19 @@ sudo apt-get install -y curl wget cmake git nano make \
 sudo snap install docker
 sudo snap install --classic heroku
 sudo snap install microk8s --channel=1.19/candidate --classic
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo usermod -aG docker ${USER}
+sudo systemctl status docker
+sudo apt-get install postgresql-client-12 pgadmin4 nginx openssh-server libstdc++-10-dev
+
 ```
 https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569
 ```bash

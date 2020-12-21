@@ -13,7 +13,7 @@ sudo apt-get install -y curl wget cmake git nano make \
       autoconf less vim gcc-multilib sudo ca-certificates graphviz \
       libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
       inotify-tools gnupg-agent software-properties-common inotify-tools \ 
-      apt-transport-https curl gnupg-agent software-properties-common 
+      apt-transport-https curl gnupg-agent software-properties-common dafny z3
 ```
 ## Basic Setup 
 

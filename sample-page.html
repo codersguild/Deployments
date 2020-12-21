@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Technotonix-1134</title>
+<style>
+    body {
+        width: 45em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+<script>
+function generateUUID() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                        // Typical action to be performed when the document is ready:
+                        document.getElementById("uuid4").innerHTML = xhttp.responseText;
+                }
+        };
+        xhttp.open("GET", "https://www.uuidgenerator.net/api/version4", true);
+        xhttp.send();
+}
+
+setInterval(generateUUID, 5000);
+</script>
+</head>
+<body>
+<h1>AWS 1134</h1>
+<h2>Request ID : <code id="uuid4" onclick="generateUUID()">generating...</code></h2>
+</body>
+</html>

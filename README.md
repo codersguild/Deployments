@@ -40,7 +40,7 @@ ninja all
 ## More Build CMD for `cmake-projects`
 
 ```
-cmake   \
+	cmake   \
 	-DENABLE_POSIX_RUNTIME=ON   \
 	-DENABLE_KLEE_UCLIBC=ON   \
 	-DKLEE_UCLIBC_PATH=$HOME/klee-uclibc   \
@@ -57,6 +57,7 @@ cmake   \
 	-DGTEST_SRC_DIR=$HOME/googletest-release-1.7.0/ $HOME/klee
 ```
 
-## `Errors`
+## `LookUps`
 
 ```-lstdc++```, ```sudo apt-get install libstdc++-10-dev```.
+```ping```, ```ping $(ifconfig | grep "inet 19" |  awk '{print $2}')```

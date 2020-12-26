@@ -7,18 +7,17 @@
 
 ```bash
 sudo apt-get install -y curl wget cmake git nano make \
-      build-essential ca-certificates z3 python3 python3-pip \
-      llvm z3 gcc g++ golang-go gccgo ninja-build libgraphviz-dev \
-      libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
-      autoconf less vim gcc-multilib sudo ca-certificates graphviz \
-      libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
-      inotify-tools gnupg-agent software-properties-common inotify-tools \ 
-      apt-transport-https curl gnupg-agent software-properties-common dafny z3
+build-essential ca-certificates z3 python3 python3-pip \
+llvm z3 gcc g++ golang-go gccgo ninja-build libgraphviz-dev \
+libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
+autoconf less vim gcc-multilib sudo ca-certificates graphviz \
+libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
+inotify-tools gnupg-agent software-properties-common inotify-tools \
+apt-transport-https curl gnupg-agent software-properties-common dafny z3
 ```
 ## Basic Setup 
 
 ```bash
-sudo snap install docker
 sudo snap install --classic heroku
 sudo snap install microk8s --channel=1.19/candidate --classic
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -29,11 +28,13 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt update
 apt-cache policy docker-ce
-sudo apt install docker-ce
+sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
 sudo systemctl status docker
-sudo apt-get install postgresql-client-12 pgadmin4 nginx openssh-server libstdc++-10-dev
 
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get install postgresql-client-12 pgadmin4 nginx openssh-server libstdc++-10-dev
 ```
 https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569
 ```bash
@@ -79,11 +80,11 @@ ninja all
 ## Termification 
 
 ```
-sudo apt install golang-go unzip
+sudo apt install -y golang-go unzip git wget
 go get -u github.com/justjanne/powerline-go
 
 wget https://github.com/microsoft/cascadia-code/releases/download/v2009.22/CascadiaCode-2009.22.zip
-unzip CascadiaCode-2009.22.zi
+unzip CascadiaCode-2009.22.zip
 
 sudo cp -r ttf/ /usr/share/fonts/
 sudo cp -r woff2/ /usr/share/fonts/

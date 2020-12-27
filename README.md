@@ -18,6 +18,7 @@ apt-transport-https curl gnupg-agent software-properties-common dafny z3
 ## Basic Setup 
 
 ```bash
+sudo snap install htop
 sudo snap install --classic heroku
 sudo snap install microk8s --channel=1.19/candidate --classic
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -

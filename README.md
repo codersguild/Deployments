@@ -101,3 +101,25 @@ fi
 ```
 
 * [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases?WT.mc_id=-blog-scottha)
+
+
+## Running MacOSX 
+
+```
+sudo docker run --name macosx \
+    --device /dev/kvm \
+    --device /dev/snd \
+    --device /dev/sdb5 \
+    --privileged \
+    --net host \
+    --cap-add=ALL \
+    -e SMP=4 \
+    -e CORES=4 \
+    -e RAM=16 \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /dev:/dev \
+    -v /lib/modules:/lib/modules \
+    -e "DISPLAY=${DISPLAY:-:0.0}" \
+    sickcodes/docker-osx:latest 
+```

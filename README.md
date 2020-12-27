@@ -7,10 +7,10 @@
 
 ```bash
 sudo apt-get install -y curl wget cmake git nano make \
-build-essential ca-certificates z3 python3 python3-pip \
+build-essential ca-certificates z3 python3 nginx python3-pip \
 llvm z3 gcc g++ golang-go gccgo ninja-build libgraphviz-dev \
 libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
-autoconf less vim gcc-multilib sudo ca-certificates graphviz \
+autoconf less vim gcc-multilib sudo ca-certificates guake graphviz \
 libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
 inotify-tools gnupg-agent software-properties-common inotify-tools \
 apt-transport-https curl gnupg-agent software-properties-common dafny z3
@@ -34,7 +34,12 @@ sudo systemctl status docker
 
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
 sudo apt-get install postgresql-client-12 pgadmin4 nginx openssh-server libstdc++-10-dev
+sudo apt-get upgrade
+sudo update-initramfs -u
+sudo update-grub
+sudo update-grub2
 ```
 https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569
 ```bash

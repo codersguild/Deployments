@@ -13,7 +13,15 @@ libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
 autoconf less vim gcc-multilib sudo ca-certificates guake graphviz \
 libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
 inotify-tools gnupg-agent software-properties-common inotify-tools \
-apt-transport-https curl gnupg-agent software-properties-common dafny z3
+apt-transport-https curl gnupg-agent software-properties-common dafny z3 \
+build-essential curl libcap-dev git cmake libncurses5-dev python3 \ 
+python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \ 
+libsqlite3-dev doxygen gcc-multilib g++-multilib
+
+sudo pip3 install lit tabulate wllvm
+sudo apt-get install clang-9 llvm-9 llvm-9-dev llvm-9-tools
+curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
+unzip release-1.7.0.zip
 ```
 ## Basic Setup 
 
@@ -30,8 +38,14 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 apt-cache policy docker-ce
 sudo apt install -y docker-ce
+sudo usermod -aG docker mlc6555
+
 sudo usermod -aG docker ${USER}
 sudo systemctl status docker
+```
+
+```
+sudo apt-get install gparted
 
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -120,7 +134,10 @@ fi
 sudo docker run --name macosx \
     --device /dev/kvm \
     --device /dev/snd \
-    --device /dev/sdb5 \
+    -e AUDIO_DRIVER=pa,server=unix:/tmp/pulseaudio.socket \
+    -v "/run/user/$(id -u)/pulse/native:/tmp/pulseaudio.socket" \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e PULSE_SERVER=unix:/tmp/pulseaudio.socket \
     --privileged \
     --net host \
     --cap-add=ALL \
@@ -129,6 +146,7 @@ sudo docker run --name macosx \
     -e RAM=16 \
     -p 50922:10022 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e EXTRA='-usb -device usb-host,hostbus=1,hostaddr=8' \
     -v /dev:/dev \
     -v /lib/modules:/lib/modules \
     -e "DISPLAY=${DISPLAY:-:0.0}" \

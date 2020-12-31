@@ -127,6 +127,7 @@ fi
 
 * [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases?WT.mc_id=-blog-scottha)
 * [Terminal Schemes](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/frosted-glass-theme)
+* [Retro Fitting](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
 ## Running MacOSX 
 

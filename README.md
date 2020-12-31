@@ -71,7 +71,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr               \
       -Wno-dev -G Ninja ../llvm                &&
 ninja all
 ```
-## More Build CMD for `cmake-projects`
+## More Build CMD for `cmake-projects` for Research Projects
 
 ```
 mkdir libcxx-build
@@ -126,7 +126,7 @@ fi
 ```
 
 * [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases?WT.mc_id=-blog-scottha)
-
+* [Terminal Schemes](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/frosted-glass-theme)
 
 ## Running MacOSX 
 

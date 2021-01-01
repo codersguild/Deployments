@@ -147,7 +147,7 @@ sudo docker run --name macosx \
     -e RAM=16 \
     -p 50922:10022 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -e EXTRA='-usb -device usb-host,hostbus=1,hostaddr=8' \
+    -e EXTRA='-usb -device usb-host,hostbus=1,hostaddr=2' \
     -v /dev:/dev \
     -v /lib/modules:/lib/modules \
     -e "DISPLAY=${DISPLAY:-:0.0}" \

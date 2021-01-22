@@ -153,3 +153,11 @@ sudo docker run --name macosx \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
     sickcodes/docker-osx:latest 
 ```
+
+## Intresting Commands
+
+Random Text
+
+```
+$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)
+```

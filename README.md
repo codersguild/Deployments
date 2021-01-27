@@ -74,9 +74,9 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr               \
 ninja all
 ```
 
-Bluetooth Issue : [Install](https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset)
-GOLLVM Commit : [Install](https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569)
-TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)
+- Bluetooth Issue : [Install](https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset)
+- GOLLVM Commit : [Issue Install](https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569)
+- TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)
 
 ## More Build CMD for `cmake-projects` for Research Projects
 

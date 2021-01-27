@@ -42,7 +42,7 @@ apt-cache policy docker-ce
 sudo apt install -y docker-ce
 sudo usermod -aG docker mlc6555
 
-sudo usermod -aG docker ${USER}
+sudo usermod -aG docker $USER
 sudo systemctl status docker
 ```
 

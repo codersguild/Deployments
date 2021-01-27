@@ -3,7 +3,7 @@
 - [Docker Images : Maintain for AWS & GCP](https://hub.docker.com/u/prodrelworks)
 - [https://docs.docker.com/develop/develop-images/multistage-build/](https://docs.docker.com/develop/develop-images/multistage-build/)
 
-## Init Install : 
+## Init Install :
 
 ```bash
 sudo apt-get install -y curl wget cmake git nano make \
@@ -12,10 +12,10 @@ llvm z3 gcc g++ golang-go gccgo ninja-build libgraphviz-dev \
 libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
 autoconf less vim gcc-multilib sudo ca-certificates guake graphviz \
 libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
-inotify-tools gnupg-agent software-properties-common inotify-tools \
+inotify-tools gnupg-agent software-properties-common libstdc++-10-dev inotify-tools \
 apt-transport-https curl gnupg-agent software-properties-common dafny z3 \
-build-essential curl libcap-dev git cmake libncurses5-dev python3 \ 
-python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \ 
+build-essential curl libcap-dev git cmake libncurses5-dev python3 \
+python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \
 libsqlite3-dev doxygen gcc-multilib g++-multilib
 
 sudo pip3 install lit tabulate wllvm
@@ -23,15 +23,17 @@ sudo apt-get install clang-9 llvm-9 llvm-9-dev llvm-9-tools
 curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
 unzip release-1.7.0.zip
 ```
-## Basic Setup 
+## Basic Setup
 
 ```bash
 sudo snap install htop
 sudo snap install --classic heroku
 sudo snap install microk8s --channel=1.19/candidate --classic
+sudo apt-get install texlive-full texmaker xjournal
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
+
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
@@ -56,7 +58,7 @@ sudo update-initramfs -u
 sudo update-grub
 sudo update-grub2
 ```
-https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569
+
 ```bash
 CC=clang CXX=clang++                            \
 cmake -DCMAKE_INSTALL_PREFIX=/usr               \
@@ -71,6 +73,11 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr               \
       -Wno-dev -G Ninja ../llvm                &&
 ninja all
 ```
+
+Bluetooth Issue : [Install](https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset)
+GOLLVM Commit : [Install](https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569)
+TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)
+
 ## More Build CMD for `cmake-projects` for Research Projects
 
 ```
@@ -81,30 +88,24 @@ LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENAB
 mkdir build && cd build
 
 cmake \
--DENABLE_POSIX_RUNTIME=ON \
--DENABLE_KLEE_UCLIBC=ON \
--DKLEE_UCLIBC_PATH=$HOME/klee-uclibc \
--DLLVM_CONFIG_BINARY=/usr/bin/llvm-config \
--DLLVMCC=/usr/bin/clang-9 \
--DLLVMCXX=/usr/bin/clang++-9 \
--DENABLE_KLEE_LIBCXX=ON \
--DENABLE_KLEE_EH_CXX=ON	\
--DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts \
--DKLEE_LIBCXX_DIR=$HOME/libcxx-build/libc++-install-90/ \
--DKLEE_LIBCXXABI_SRC_DIR=$HOME/libcxx-build/llvm-90/libcxxabi/ \
--DKLEE_LIBCXX_INCLUDE_DIR=$HOME/libcxx-build/libc++-install-90/include/c++/v1/ \
--DENABLE_KLEE_EH_CXX=ON \
--DENABLE_UNIT_TESTS=ON \
--DGTEST_SRC_DIR=$HOME/googletest-release-1.7.0/ $HOME/klee 
+  -DENABLE_POSIX_RUNTIME=ON \
+  -DENABLE_KLEE_UCLIBC=ON \
+  -DKLEE_UCLIBC_PATH=$HOME/klee-uclibc \
+  -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config \
+  -DLLVMCC=/usr/bin/clang-9 \
+  -DLLVMCXX=/usr/bin/clang++-9 \
+  -DENABLE_KLEE_LIBCXX=ON \
+  -DENABLE_KLEE_EH_CXX=ON	\
+  -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts \
+  -DKLEE_LIBCXX_DIR=$HOME/libcxx-build/libc++-install-90/ \
+  -DKLEE_LIBCXXABI_SRC_DIR=$HOME/libcxx-build/llvm-90/libcxxabi/ \
+  -DKLEE_LIBCXX_INCLUDE_DIR=$HOME/libcxx-build/libc++-install-90/include/c++/v1/ \
+  -DENABLE_KLEE_EH_CXX=ON \
+  -DENABLE_UNIT_TESTS=ON \
+  -DGTEST_SRC_DIR=$HOME/googletest-release-1.7.0/ $HOME/klee
 ```
 
-## `LookUps`
-
-```-lstdc++```, ```sudo apt-get install libstdc++-10-dev```.
-
-```ping```, ```ping $(ifconfig | grep "inet 19" |  awk '{print $2}')```
-
-## Termification 
+## Termification
 
 ```
 sudo apt install -y golang-go unzip git wget
@@ -116,7 +117,7 @@ unzip CascadiaCode-2009.22.zip
 sudo cp -r ttf/ /usr/share/fonts/
 sudo cp -r woff2/ /usr/share/fonts/
 
-sudo nano ~/.bashrc 
+sudo nano ~/.bashrc
 
 GOPATH=$HOME/go
 function _update_ps1() {
@@ -131,7 +132,7 @@ fi
 * [Terminal Schemes](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/frosted-glass-theme)
 * [Retro Fitting](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
-## Running MacOSX 
+## Running MacOSX
 
 ```
 sudo docker run --name macosx \
@@ -153,7 +154,7 @@ sudo docker run --name macosx \
     -v /dev:/dev \
     -v /lib/modules:/lib/modules \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
-    sickcodes/docker-osx:latest 
+    sickcodes/docker-osx:latest
 ```
 
 ## Intresting Commands

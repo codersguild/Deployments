@@ -78,6 +78,8 @@ mkdir libcxx-build
 cd ../klee
 LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
 
+mkdir build && cd build
+
 cmake \
 -DENABLE_POSIX_RUNTIME=ON \
 -DENABLE_KLEE_UCLIBC=ON \

@@ -16,7 +16,7 @@ inotify-tools gnupg-agent software-properties-common libstdc++-10-dev inotify-to
 apt-transport-https curl gnupg-agent software-properties-common dafny z3 \
 build-essential curl libcap-dev git cmake libncurses5-dev python3 \
 python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \
-libsqlite3-dev doxygen gcc-multilib g++-multilib
+libsqlite3-dev doxygen gcc-multilib g++-multilib \ 
 
 sudo pip3 install lit tabulate wllvm
 sudo apt-get install clang-9 llvm-9 llvm-9-dev llvm-9-tools
@@ -34,18 +34,20 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
+Docker Install 
+
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt update
+
 apt-cache policy docker-ce
 sudo apt install -y docker-ce
-sudo usermod -aG docker mlc6555
 
 sudo usermod -aG docker $USER
 sudo systemctl status docker
 ```
-
+More Packages 
 ```
 sudo apt-get install gparted
 

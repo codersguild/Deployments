@@ -31,7 +31,7 @@ unzip release-1.7.0.zip
 sudo snap install htop
 sudo snap install --classic heroku
 sudo snap install microk8s --channel=1.19/candidate --classic
-sudo apt-get install texlive-full texmaker xjournal
+sudo apt-get install texlive-full texmaker xournal
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```

@@ -3,27 +3,29 @@
 - [Docker Images : Maintain for AWS & GCP](https://hub.docker.com/u/prodrelworks)
 - [https://docs.docker.com/develop/develop-images/multistage-build/](https://docs.docker.com/develop/develop-images/multistage-build/)
 
-## Init Install :
+## Initial Install :
 
 ```bash
-sudo apt-get install -y curl wget cmake git nano make \
-build-essential ca-certificates z3 python3 nginx python3-pip \
-llvm z3 gcc g++ golang-go gccgo ninja-build libgraphviz-dev \
-libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
-autoconf less vim gcc-multilib sudo ca-certificates guake graphviz \
-libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
-inotify-tools gnupg-agent software-properties-common libstdc++-10-dev inotify-tools \
-apt-transport-https curl gnupg-agent software-properties-common dafny z3 \
-build-essential curl libcap-dev git cmake libncurses5-dev python3 \
-python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \
-libsqlite3-dev doxygen gcc-multilib g++-multilib \ 
+
+sudo apt-get install -y \
+    curl wget cmake git nano make \
+    build-essential ca-certificates z3 python3 nginx python3-pip \
+    llvm z3 gcc g++ golang-go gccgo ninja-build libgraphviz-dev \
+    libgmp-dev libmpfr-dev clang libboost-all-dev python3-pip \
+    autoconf less vim gcc-multilib sudo ca-certificates guake graphviz \
+    libgraphviz-dev python3-pygraphviz lcov ggcov apt-utils net-tools \
+    inotify-tools gnupg-agent software-properties-common libstdc++-10-dev inotify-tools \
+    apt-transport-https curl gnupg-agent software-properties-common dafny z3 \
+    build-essential curl libcap-dev git cmake libncurses5-dev python3 \
+    python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \
+    libsqlite3-dev doxygen gcc-multilib g++-multilib \
+    clang-9 llvm-9 llvm-9-dev llvm-9-tools
 
 sudo pip3 install lit tabulate wllvm
-sudo apt-get install clang-9 llvm-9 llvm-9-dev llvm-9-tools
 curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
 unzip release-1.7.0.zip
 ```
-## Basic Setup
+## Basic Setup 
 
 ```bash
 sudo snap install htop
@@ -34,9 +36,9 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Docker Install 
+Docker Install  : 
 
-```
+```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt update
@@ -47,8 +49,10 @@ sudo apt install -y docker-ce
 sudo usermod -aG docker $USER
 sudo systemctl status docker
 ```
-More Packages 
-```
+
+More Packages : 
+
+```bash 
 sudo apt-get install gparted
 
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -76,6 +80,8 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr               \
 ninja all
 ```
 
+Other `Ubuntu 20.04` Installs :
+
 - Bluetooth Issue : [Install](https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset)
 - GOLLVM Commit : [Issue Install](https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569)
 - TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)
@@ -83,7 +89,7 @@ ninja all
 
 ## More Build CMD for `cmake-projects` for Research Projects
 
-```
+```bash
 mkdir libcxx-build
 cd ../klee
 LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
@@ -110,7 +116,7 @@ cmake \
 
 ## Termification
 
-```
+```bash
 sudo apt install -y golang-go unzip git wget
 go get -u github.com/justjanne/powerline-go
 
@@ -137,7 +143,7 @@ fi
 
 ## Running MacOSX
 
-```
+```bash
 sudo docker run --name macosx \
     --device /dev/kvm \
     --device /dev/snd \
@@ -160,12 +166,8 @@ sudo docker run --name macosx \
     sickcodes/docker-osx:latest
 ```
 
-## Intresting Commands
+## Intresting Commands & Codes
 
-Random Text
-
-```
-$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)
-```
-
+Random Text ``$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)`
+Kill A Process by name  `$(sudo kill -9 $(ps -aux | grep $1 | awk '{ print $2 }'))`
 Epoll Source : [Epoll](https://github.com/enki/libev/blob/master/ev_epoll.c)

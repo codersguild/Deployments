@@ -168,7 +168,7 @@ sudo docker run --name macosx \
 
 ## Intresting Commands & Codes 
 
-- Random Text generation : ``$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)`
+- Random Text generation : `$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)`
 - Kill A Process by name : `$(sudo kill -15 $(ps -aux | grep $1 | awk '{ print $2 }'))`
 - Epoll Source : [Epoll](https://github.com/enki/libev/blob/master/ev_epoll.c)
 - Utilities I find useful : `ps`, `ld`, `grep`, `tr`, `dc`, `file`, `netstat`, .... (may never end) 

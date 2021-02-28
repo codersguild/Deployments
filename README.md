@@ -19,9 +19,9 @@ sudo apt-get install -y \
     build-essential curl libcap-dev git cmake libncurses5-dev python3 \
     python3-pip unzip libtcmalloc-minimal4 libgoogle-perftools-dev \
     libsqlite3-dev doxygen gcc-multilib g++-multilib \
-    clang-9 llvm-9 llvm-9-dev llvm-9-tools
+    clang-9 llvm-9 llvm-9-dev llvm-9-tools afl++
 
-sudo pip3 install lit tabulate wllvm
+sudo pip3 install lit tabulate wllvm pygame keras pandas torch torchvision
 curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
 unzip release-1.7.0.zip
 ```

@@ -21,7 +21,8 @@ sudo apt-get install -y \
     libsqlite3-dev doxygen gcc-multilib g++-multilib \
     clang-9 llvm-9 llvm-9-dev llvm-9-tools afl++
 
-sudo pip3 install lit tabulate wllvm pygame keras pandas torch torchvision
+sudo pip3 install lit tabulate wllvm pygame keras pandas scikit-learn 
+sudo pip3 install torch torchvision
 curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
 unzip release-1.7.0.zip
 ```

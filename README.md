@@ -32,6 +32,8 @@ unzip release-1.7.0.zip
 sudo snap install htop
 sudo snap install --classic heroku
 sudo snap install microk8s --channel=1.19/candidate --classic
+sudo snap install slack --classic
+
 sudo apt-get install texlive-full texmaker xournal
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -87,6 +89,7 @@ Other `Ubuntu 20.04` Installs :
 - GOLLVM Commit : [Issue Install](https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569)
 - TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)
 - Fortinet Client : [Install](https://www.forticlient.com/downloads)
+- Zoom Client : [Install](https://zoom.us/download?os=linux)
 
 ## More Build CMD for `cmake-projects` for Research Projects
 

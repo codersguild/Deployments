@@ -176,3 +176,4 @@ sudo docker run --name macosx \
 - Kill A Process by name : `$(sudo kill -15 $(ps -aux | grep $1 | awk '{ print $2 }'))`
 - Epoll Source : [Epoll](https://github.com/enki/libev/blob/master/ev_epoll.c)
 - Utilities I find useful : `ps`, `ld`, `grep`, `tr`, `dc`, `file`, `netstat`, .... (may never end) 
+- Get a series of zeros or null file : `head -c 100 /dev/zero > input05.txt`

@@ -172,9 +172,20 @@ sudo docker run --name macosx \
 
 ## Intresting Commands & Codes 
 
-- Random Text generation : `$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)`
-- Kill A Process by name : `$(sudo kill -15 $(ps -aux | grep $1 | awk '{ print $2 }'))`
-- Epoll Source : [Epoll](https://github.com/enki/libev/blob/master/ev_epoll.c)
-- Utilities I find useful : `ps`, `ld`, `grep`, `tr`, `dc`, `file`, `netstat`, .... (may never end) 
-- Get a series of zeros or null file : `head -c 100 /dev/zero > input05.txt`
-- Dwarf Information : `ELFs & Dwarfs` [Good Intro](http://www.dwarfstd.org/doc/Debugging%20using%20DWARF-2012.pdf)
+- Random Text generation : 
+    - `$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)`
+
+- Kill A Process by name : 
+    - `$(sudo kill -15 $(ps -aux | grep $1 | awk '{ print $2 }'))`
+
+- Epoll Source : 
+    - [Epoll](https://github.com/enki/libev/blob/master/ev_epoll.c) 
+
+- Get a series of zeros or null file : 
+    - `head -c 100 /dev/zero > input05.txt`
+
+- Dwarf Information : 
+    - `ELFs & Dwarfs` [Good Intro](http://www.dwarfstd.org/doc/Debugging%20using%20DWARF-2012.pdf)
+
+- Get Random data dump of "n" bytes : Change `bs` value
+    - ` dd if=/dev/random of=input01.txt bs=16 count=1`

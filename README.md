@@ -39,7 +39,7 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Docker Install  : 
+## Docker Install  : 
 
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -53,7 +53,7 @@ sudo usermod -aG docker $USER
 sudo systemctl status docker
 ```
 
-More Packages : 
+## More Packages : 
 
 ```bash 
 sudo apt-get install gparted
@@ -91,7 +91,7 @@ Other `Ubuntu 20.04` Installs :
 - Fortinet Client : [Install](https://www.forticlient.com/downloads)
 - Zoom Client : [Install](https://zoom.us/download?os=linux)
 
-## More Build CMD for `cmake-projects` for Research Projects
+## More Build CMD for `cmake-projects` for Research Projects : (KLEE-LLVM-COV)
 
 ```bash
 mkdir libcxx-build
@@ -118,7 +118,7 @@ cmake \
   -DGTEST_SRC_DIR=$HOME/googletest-release-1.7.0/ $HOME/klee
 ```
 
-## Termification
+## Termification : 
 
 ```bash
 sudo apt install -y golang-go unzip git wget
@@ -145,7 +145,7 @@ fi
 * [Terminal Schemes](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/frosted-glass-theme)
 * [Retro Fitting](https://docs.microsoft.com/en-us/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
-## Running MacOSX
+## Running MacOSX : 
 
 ```bash
 sudo docker run --name macosx \
@@ -169,8 +169,14 @@ sudo docker run --name macosx \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
     sickcodes/docker-osx:latest
 ```
+## Pen-Input Settings : 
 
-## Intresting Commands & Codes 
+```bash
+$ xrandr
+$ xinput map-to-output 23 HDMI-0
+```
+
+## Interesting & Frequent Commands :  
 
 - Random Text generation : 
     - `$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 15)`

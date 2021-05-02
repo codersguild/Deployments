@@ -1,0 +1,61 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontSize": 15,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace, Menlo, menlo",
+    "editor.fontLigatures": true,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#26122b",
+        "terminal.foreground": "#54ee0d",
+        "terminalCursor.background": "#0df105",
+        "terminalCursor.foreground": "#1df309",
+        "terminal.ansiBlack": "#1D2021",
+        "terminal.ansiBlue": "#0D6678",
+        "terminal.ansiBrightBlack": "#665C54",
+        "terminal.ansiBrightBlue": "#0D6678",
+        "terminal.ansiBrightCyan": "#8BA59B",
+        "terminal.ansiBrightGreen": "#95C085",
+        "terminal.ansiBrightMagenta": "#8F4673",
+        "terminal.ansiBrightRed": "#FB543F",
+        "terminal.ansiBrightWhite": "#FDF4C1",
+        "terminal.ansiBrightYellow": "#FAC03B",
+        "terminal.ansiCyan": "#8BA59B",
+        "terminal.ansiGreen": "#95C085",
+        "terminal.ansiMagenta": "#8F4673",
+        "terminal.ansiRed": "#FB543F",
+        "terminal.ansiWhite": "#A89984",
+        "terminal.ansiYellow": "#FAC03B"
+    },
+    "editor.formatOnSave": true,
+    "python.languageServer": "Microsoft",
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.general.tags": [
+        "XXX",
+        "TODO",
+        "HACK",
+        "FIXME",
+        "COMMENT",
+        "BUG",
+        "ASK",
+        "TASK"
+    ],
+    "cmake.configureOnOpen": false,
+    "window.zoomLevel": 0,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Ra Light",
+    "tabnine.experimentalAutoImports": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "explorer.confirmDelete": false,
+    "C_Cpp.updateChannel": "Insiders"
+}

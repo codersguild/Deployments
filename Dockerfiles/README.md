@@ -17,3 +17,11 @@ Example
 ```bash
 $ docker run --name code2inv-prod -it -v $PWD:/production code2inv/code2inv:latest
 ```
+
+## Push to Registry
+
+Example 
+
+```bash
+$ sudo docker image push prodrelworks/kleecontainer:focal
+```

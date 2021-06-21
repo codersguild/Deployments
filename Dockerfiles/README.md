@@ -21,7 +21,7 @@ $ docker run --name code2inv-prod -it -v $PWD:/production code2inv/code2inv:late
 ## Commit Command
 
 ```bash
-$ docker container commit -a "Sumit Lahiri <lahiri.phdwroks@gmail.com>" llvm29 prodrelworks/llvm29:latest
+$ docker container commit -a "Sumit Lahiri <lari.devs@gmail.com>" llvm29 prodrelworks/llvm29:latest
 ```
 
 ## Push to Registry
@@ -30,4 +30,5 @@ Example
 
 ```bash
 $ sudo docker image push prodrelworks/kleecontainer:focal
+$ sudo docker push prodrelworks/llvm29:latest
 ```

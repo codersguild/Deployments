@@ -98,11 +98,14 @@ Other `Ubuntu 20.04` Installs :
 ## More Build CMD for `cmake-projects` for Research Projects : (KLEE-LLVM-COV)
 
 ```bash
+export HOME=/home
+
 mkdir libcxx-build
 cd ./klee
 LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
 
-mkdir build && cd build
+cd ../
+mkdir klee-build && cd ./klee-build
 
 cmake \
   -DENABLE_POSIX_RUNTIME=ON \
@@ -112,7 +115,7 @@ cmake \
   -DLLVMCC=/usr/bin/clang-9 \
   -DLLVMCXX=/usr/bin/clang++-9 \
   -DENABLE_KLEE_LIBCXX=ON \
-  -DENABLE_KLEE_EH_CXX=ON	\
+  -DENABLE_KLEE_EH_CXX=ON \
   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts \
   -DKLEE_LIBCXX_DIR=$HOME/libcxx-build/libc++-install-90/ \
   -DKLEE_LIBCXXABI_SRC_DIR=$HOME/libcxx-build/llvm-90/libcxxabi/ \
@@ -120,6 +123,9 @@ cmake \
   -DENABLE_KLEE_EH_CXX=ON \
   -DENABLE_UNIT_TESTS=ON \
   -DGTEST_SRC_DIR=$HOME/googletest-release-1.7.0/ $HOME/klee
+  
+make -j 4
+make install 
 ```
 
 ## Termification : 

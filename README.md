@@ -78,7 +78,7 @@ CC=clang CXX=clang++                            \
 cmake -DCMAKE_INSTALL_PREFIX=/usr               \
       -DLLVM_ENABLE_FFI=ON                      \
       -DCMAKE_BUILD_TYPE=Release                \
-      -DLLVM_ENABLE_PROJECTS="clang;lld" \
+      -DLLVM_ENABLE_PROJECTS="clang;compiler-rt" \
       -DLLVM_BUILD_LLVM_DYLIB=ON                \
       -DLLVM_LINK_LLVM_DYLIB=ON                 \
       -DLLVM_ENABLE_RTTI=ON                     \
@@ -91,7 +91,7 @@ ninja all
 
 ```bash
 $ cmake -S llvm -B build -G "Unix Makefiles" \
-        -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang" \ 
+        -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang;compiler-rt" \ 
         -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF \
         -DCMAKE_BUILD_TYPE=Release \
         -DLLVM_TARGETS_TO_BUILD="X86" \

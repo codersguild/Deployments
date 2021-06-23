@@ -62,7 +62,8 @@ sudo systemctl status docker
 ```bash 
 sudo apt-get install gparted
 
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" \ 
+    > /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install postgresql-client-12 pgadmin4 nginx openssh-server libstdc++-10-dev
@@ -86,8 +87,15 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr               \
       -Wno-dev -G Ninja ../llvm                &&
 ninja all
 ```
+## Lighter Build
+
 ```bash
-$ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang" -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="X86" -DLLVM_BUILD_TESTS=ON
+$ cmake -S llvm -B build -G "Unix Makefiles" \
+        -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang" \ 
+        -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DLLVM_TARGETS_TO_BUILD="X86" \
+        -DLLVM_BUILD_TESTS=ON
 ```
 
 Other `Ubuntu 20.04` Installs :

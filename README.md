@@ -35,6 +35,9 @@ sudo snap install microk8s --channel=1.19/candidate --classic
 sudo snap install slack --classic
 sudo snap install gitkraken --classic
 
+# Installing JAVA
+sudo apt-get install default-jdk default-jre
+
 # Full Tex Libraries
 sudo apt-get install texlive-full texmaker xournal
 
@@ -106,6 +109,7 @@ Other `Ubuntu 20.04` Installs :
 - TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)
 - Fortinet Client : [Install](https://links.fortinet.com/forticlient/deb/vpnagent)
 - Zoom Client : [Install](https://zoom.us/download?os=linux)
+- JAVA Install : [DigitalOcean Guide](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)
 
 ## More Build CMD for `cmake-projects` for Research Projects : (KLEE-LLVM-COV)
 

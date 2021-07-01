@@ -102,6 +102,12 @@ $ cmake \
     -DLLVM_BUILD_TESTS=ON
 ```
 
+#### LLVM Base `cmake`
+
+```bash
+$ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;compiler-rt" -DCMAKE_BUILD_TYPE=Release
+```
+
 Other `Ubuntu 20.04` Installs :
 
 - Bluetooth Issue : [Install](https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset)

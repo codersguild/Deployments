@@ -1,0 +1,97 @@
+version: "3"
+services:
+  redis_cluster:
+    image: "redis:alpine"
+    restart: always
+    ports:
+      - "6378:6379"
+    expose:
+      - "6378"
+
+  redis_data:
+    image: "redis:alpine"
+    restart: always
+    ports:
+      - "6375:6379"
+    expose:
+      - "6375"
+
+  broker:
+    image: rabbitmq:3-management-alpine
+    hostname: rabbit1
+    restart: always
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "user"
+      RABBITMQ_DEFAULT_PASS: "password"
+      RABBITMQ_DEFAULT_VHOST: "/"
+      CELERY_BROKER_URL: "amqp://user:password@broker:5672"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    expose:
+      - "5672"
+    volumes:
+      - .:/app
+
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfiles/celery.Dockerfile
+    container_name: celery_worker
+    restart: "always"
+    environment:
+      ENVWORK: "prod"
+    command: celery -A worker worker -l info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis_cluster
+      - redis_data
+      - broker
+      - zookeeper
+      - kafka
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfiles/flask.Dockerfile
+    environment:
+      ENVWORK: "prod"
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    restart: "always"
+    volumes:
+      - .:/app
+    depends_on:
+      - redis_cluster
+      - redis_data
+      - broker
+      - zookeeper
+      - kafka
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    restart: always
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    restart: always
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

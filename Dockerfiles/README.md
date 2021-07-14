@@ -1,3 +1,11 @@
+# DockerFiles & Information
+
+- Stop all docker containers 
+- Delete all docker containers
+- Run from Docker YAML (docker compose) 
+- Stop from Docker YAML 
+- Remove all Docker stuf. `docker system prune -a` 
+
 ## Build Command
 
 ```bash

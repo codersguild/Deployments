@@ -227,3 +227,5 @@ $ xinput map-to-output 23 HDMI-0
 
 - Get Random data dump of "n" bytes : Change `bs` value
     - ` dd if=/dev/random of=input01.txt bs=16 count=1`
+
+- Git Cache `git config credential.helper 'cache --timeout=300'`

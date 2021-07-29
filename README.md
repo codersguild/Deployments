@@ -122,6 +122,11 @@ Other `Ubuntu 20.04` Installs :
 ```bash
 export HOME=/home
 
+git clone https://github.com/klee/klee-uclibc.git
+cd klee-uclibc
+./configure --make-llvm-lib
+make -j 8
+   
 mkdir libcxx-build
 cd ./klee
 LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
@@ -134,8 +139,8 @@ cmake \
   -DENABLE_KLEE_UCLIBC=ON \
   -DKLEE_UCLIBC_PATH=$HOME/klee-uclibc \
   -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config \
-  -DLLVMCC=/usr/bin/clang-9 \
-  -DLLVMCXX=/usr/bin/clang++-9 \
+  -DLLVMCC=/usr/bin/clang-10 \
+  -DLLVMCXX=/usr/bin/clang++-10 \
   -DENABLE_KLEE_LIBCXX=ON \
   -DENABLE_KLEE_EH_CXX=ON \
   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts \

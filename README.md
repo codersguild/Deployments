@@ -99,13 +99,14 @@ $ cmake \
     -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF \
     -DCMAKE_BUILD_TYPE=Release \
     -DLLVM_TARGETS_TO_BUILD="X86" \
-    -DLLVM_BUILD_TESTS=ON
+    -DLLVM_BUILD_TESTS=ON \
+    -DLLVM_INSTALL_UTILS=ON
 ```
 
 #### LLVM Base `cmake`
 
 ```bash
-$ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;compiler-rt" -DCMAKE_BUILD_TYPE=Release
+$ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi;compiler-rt" -DCMAKE_BUILD_TYPE=Release -DLLVM_INSTALL_UTILS=ON
 ```
 
 Other `Ubuntu 20.04` Installs :

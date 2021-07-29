@@ -124,12 +124,14 @@ export HOME=/home
 
 git clone https://github.com/klee/klee-uclibc.git
 cd klee-uclibc
-./configure --make-llvm-lib
+./configure --make-llvm-lib --enable-assertions --enable-release
 make -j 8
    
 mkdir libcxx-build
 cd ./klee
-LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
+
+LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 \
+    ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
 
 cd ../
 mkdir klee-build && cd ./klee-build

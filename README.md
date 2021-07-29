@@ -124,13 +124,13 @@ export HOME=/home
 
 git clone https://github.com/klee/klee-uclibc.git
 cd klee-uclibc
-./configure --make-llvm-lib --enable-assertions --enable-release
+./configure --make-llvm-lib --with-llvm-config $(which llvm-config-10) --with-cc $(which clang-10) --enable-assertions --enable-release
 make -j 8
    
 mkdir libcxx-build
 cd ./klee
 
-LLVM_VERSION=9 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 \
+LLVM_VERSION=10 BASE=$HOME/libcxx-build REQUIRES_RTTI=1 DISABLE_ASSERTIONS=1 \
     ENABLE_DEBUG=0 ENABLE_OPTIMIZED=1 ./scripts/build/build.sh libcxx
 
 cd ../
@@ -140,9 +140,9 @@ cmake \
   -DENABLE_POSIX_RUNTIME=ON \
   -DENABLE_KLEE_UCLIBC=ON \
   -DKLEE_UCLIBC_PATH=$HOME/klee-uclibc \
-  -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config \
-  -DLLVMCC=/usr/bin/clang-10 \
-  -DLLVMCXX=/usr/bin/clang++-10 \
+  -DLLVM_CONFIG_BINARY=$(which llvm-config-10) \
+  -DLLVMCC=$(which clang-10) \
+  -DLLVMCXX=$(which clang++-10) \
   -DENABLE_KLEE_LIBCXX=ON \
   -DENABLE_KLEE_EH_CXX=ON \
   -DKLEE_RUNTIME_BUILD_TYPE=Release+Debug+Asserts \

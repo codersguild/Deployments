@@ -123,6 +123,7 @@ Other `Ubuntu 20.04` Installs :
 ```bash
 export HOME=/home
 
+# LLVM 10, clang-10 build
 git clone https://github.com/klee/klee-uclibc.git
 cd klee-uclibc
 ./configure --make-llvm-lib --with-llvm-config $(which llvm-config-10) --with-cc $(which clang-10) --enable-assertions --enable-release

@@ -40,3 +40,9 @@ Example
 $ sudo docker image push prodrelworks/kleecontainer:focal
 $ sudo docker push prodrelworks/llvm29:latest
 ```
+
+## Exec Command 
+
+```bash
+$ docker exec code2inv bash -c "cd /project ; ./generate.sh"
+```

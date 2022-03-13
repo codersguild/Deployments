@@ -261,3 +261,12 @@
   258  clear
   259  history
 ```
+
+```bash
+export Z3=/z3-z3-4.5.0
+export SAGE=/research/SageMath  
+export SAGE_PATH=$Z3/src/api/python
+export KLEE=/home/klee
+export PATH=/home/klee_build_dir/bin:$SAGE:$PATH
+```
+

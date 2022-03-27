@@ -237,6 +237,9 @@ $ xinput map-to-output 23 HDMI-0
 
 - Get Random data dump of "n" bytes : Change `bs` value
     - ` dd if=/dev/random of=input01.txt bs=16 count=1`
+   
+- LLVM Program 
+    - `find . -regex '.*\.\(cpp\|hpp\|cu\|c\|h\)' -exec clang-format -style=file -i {} \;`
 
 - Git Commands
 

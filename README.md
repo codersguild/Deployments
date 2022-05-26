@@ -111,6 +111,7 @@ $ cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang;libcx
 
 Other `Ubuntu 20.04` Installs :
 
+- Inkscape with TexText : [Inkscape TexText](https://textext.github.io/textext/install/linux.html)
 - Bluetooth Issue : [Install](https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset)
 - GOLLVM Commit : [Issue Install](https://go.googlesource.com/gollvm/+/9e1280ddbe7c442191b630827c030d13de35b569)
 - TexStudio : [Install](https://linuxhint.com/install-texstudio-latex-editor-linux/)

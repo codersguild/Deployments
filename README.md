@@ -94,7 +94,8 @@ ninja all
 
 ```bash
 cmake \
-    -S llvm -B build -Wno-dev -G "Unix Makefiles" \
+    -S llvm -B build -Wno-dev -GNinja \
+    -DCMAKE_INSTALL_PREFIX=/usr \
     -DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang;compiler-rt" \
     -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF \
     -DCMAKE_BUILD_TYPE=Release \
